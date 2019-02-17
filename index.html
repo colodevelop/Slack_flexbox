@@ -11,16 +11,41 @@
 
   <body>
     <nav class="container">
+      <span class="open-slide">
+        <a class= 'slide-btn' href="#" onclick="openSlideMenu()">
+            <svg width="30" height="30">
+                <path d="M0,5 30,5" stroke="#000"
+                stroke-width="5"/>
+                <path d="M0,14 30,14" stroke="#000"
+                stroke-width="5"/>
+                <path d="M0,23 30,23" stroke="#000"
+                stroke-width="5"/>
+       </svg>﻿
+        </a>
+      </span>
+      
       <img src="./images/slack-logo.png" alt="slack_logo" />
-      <ul>
-        <li>Why Slack?</li>
-        <li>Pricig</li>
-        <li>About Us</li>
+      <ul class="navbar">
+        <li><a href="#">Why Slack?</a> </li>
+        <li><a href="#">Pricing</a> </li>
+        <li><a href="#">About us</a> </li>
         <li><a href="#!" class="btn-nav">Your Workspaces</a></li>
       </ul>
+
     </nav>
+
     <hr />
-    <header class="container">
+
+    <div id="side-menu" class="side-nav">
+        <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+        <a href="#">Why Slack?</a>
+        <a href="#">Pricing</a>
+        <a href="#">About us</a>
+        <a href="#!" class="btn-nav">Your Workspaces</a>
+      </div>
+
+
+    <header id="main" class="container">
       <div class="header-img">
         <img src="./images/home_talking.png" alt="home_work_happening" />
       </div>
@@ -138,5 +163,17 @@
         </div>
       </div>
     </footer>
+    <script>
+      function openSlideMenu(){
+        document.getElementById('side-menu').style.width = '250px';
+        document.getElementById('main').style.marginLeft = '250px';
+      }
+
+      function closeSlideMenu(){
+        document.getElementById('side-menu').style.width = '0';
+        document.getElementById('main').style.marginLeft = '0';
+      }
+    
+    </script>
   </body>
 </html>
